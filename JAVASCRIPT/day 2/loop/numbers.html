@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // 1. fibonacci 
+
+        // let a=0, b=1, c;
+        // console.log(a);
+        // console.log(b);
+
+        // for(let i=2; i<9; i++){
+        //     c=a+b;
+        //     console.log(c);
+        //     a=b;
+        //     b=c;
+        // }
+
+
+
+        // 2. Pallindrome number 
+
+        // var x = Number(prompt("Enter the number:"))
+        // var reversed = 0, rem;
+        // var y = x;
+        // while (x > 0) {
+        //     rem = x % 10;
+        //     reversed = reversed * 10 + rem;
+        //     x = parseInt(x / 10);
+        // }
+        // console.log(reversed);
+        // if (y == reversed) {
+        //     console.log("The number is a palindrome number");
+        // }
+        // else {
+        //     console.log("The number is not a palindrome number");
+        // }
+
+
+        // 3. prime number 
+
+
+        // var num = Number(prompt("Enter the number :")); 
+
+        // if (num <= 1) {
+        //     console.log("The prime number is : "+false); 
+        // } else {
+        //     let i = 2;
+        //     let isPrime = true; 
+
+        //     while (i * i <= num) {
+        //         if (num % i === 0) {
+        //             isPrime = false; 
+        //             break;
+        //         }
+        //         i++;
+        //     }
+
+        //     console.log("The prime number is : "+isPrime); 
+        // }
+
+
+
+
+
+
+        // 4. Prime factoriale
+
+        var num = Number(prompt("Enter the number :"));
+
+        if (num <= 1) {
+            console.log("The number is not prime.");
+        } 
+        else {
+            let isPrime = true;
+            let i = 2;
+
+            while (i * i <= num) {
+                if (num % i === 0) {
+                    isPrime = false;
+                    break;
+                }
+                i++;
+            }
+
+            if (isPrime) {
+                let factorial = 1;
+                let j = num;
+
+                while (j > 1) {
+                    factorial *= j;
+                    j--;
+                }
+
+                console.log("The prime factorial is: " + factorial);
+            } 
+            else {
+                console.log("The number is not prime.");
+            }
+        }
+
+
+
+
+
+
+        // 5. Armstrong number
+
+        // var x = Number(prompt("Enter the number:"));
+        // var rem; temp = 0;
+        // y = x;
+
+        // while (x > 0) {
+        //     rem = x % 10;
+        //     temp = temp + (rem * rem * rem);
+        //     x = parseInt(x / 10);
+        // }
+        // console.log(temp);
+
+        // if (temp == y) {
+        //     console.log("This is a Armstrong Number:");
+        // }
+        // else {
+        //     console.log("This is not a Armstrong Number:");
+        // }
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
