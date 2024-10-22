@@ -25,7 +25,7 @@
 
 
 
-        // 2. Pallindrome number 
+        // 2. Pallindrome number
 
         // var x = Number(prompt("Enter the number:"))
         // var reversed = 0, rem;
@@ -44,43 +44,16 @@
         // }
 
 
-        // 3. prime number 
+        // 3. prime number
 
-
-        // var num = Number(prompt("Enter the number :")); 
-
-        // if (num <= 1) {
-        //     console.log("The prime number is : "+false); 
-        // } else {
-        //     let i = 2;
-        //     let isPrime = true; 
-
-        //     while (i * i <= num) {
-        //         if (num % i === 0) {
-        //             isPrime = false; 
-        //             break;
-        //         }
-        //         i++;
-        //     }
-
-        //     console.log("The prime number is : "+isPrime); 
-        // }
-
-
-
-
-
-
-        // 4. Prime factoriale
 
         // var num = Number(prompt("Enter the number :"));
 
         // if (num <= 1) {
-        //     console.log("The number is not prime.");
-        // } 
-        // else {
-        //     let isPrime = true;
+        //     console.log("The prime number is : "+false);
+        // } else {
         //     let i = 2;
+        //     let isPrime = true;
 
         //     while (i * i <= num) {
         //         if (num % i === 0) {
@@ -90,21 +63,29 @@
         //         i++;
         //     }
 
-        //     if (isPrime) {
-        //         let factorial = 1;
-        //         let j = num;
-
-        //         while (j > 1) {
-        //             factorial *= j;
-        //             j--;
-        //         }
-
-        //         console.log("The prime factorial is: " + factorial);
-        //     } 
-        //     else {
-        //         console.log("The number is not prime.");
-        //     }
+        //     console.log("The prime number is : "+isPrime);
         // }
+
+
+
+
+
+
+        // 4. Prime factoriale
+
+        let a = Number(prompt("enter the number :"))
+
+        let c = 2;
+
+        while (a > 1) {
+            if (a % c == 0) {
+                console.log(c);
+                a = a / c;
+            }
+            else {
+                c++;
+            }
+        }
 
 
 
@@ -113,23 +94,23 @@
 
         // 5. Armstrong number
 
-        var x = Number(prompt("Enter the number:"));
-        var rem; temp = 0;
-        y = x;
+        // var x = Number(prompt("Enter the number:"));
+        // var rem; temp = 0;
+        // y = x;
 
-        while (x > 0) {
-            rem = x % 10;
-            temp = temp + (rem * rem * rem);
-            x = parseInt(x / 10);
-        }
-        console.log(temp);
+        // while (x > 0) {
+        //     rem = x % 10;
+        //     temp = temp + (rem * rem * rem);
+        //     x = parseInt(x / 10);
+        // }
+        // console.log(temp);
 
-        if (temp == y) {
-            console.log("This is a Armstrong Number:");
-        }
-        else {
-            console.log("This is not a Armstrong Number:");
-        }
+        // if (temp == y) {
+        //     console.log("This is a Armstrong Number:");
+        // }
+        // else {
+        //     console.log("This is not a Armstrong Number:");
+        // }
 
 
 
@@ -146,7 +127,7 @@
 
 
 
-        // for loop 
+        // for loop
 
         // for(i=1; i<=10; i++){
         //     console.log(i);
@@ -154,7 +135,7 @@
 
 
 
-        
+
 
 
 
