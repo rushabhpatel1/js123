@@ -40,7 +40,7 @@
         // var arr = [1, 2, 3, 4, 5];
         // for (var i = 0; i < arr.length; i++) {
 
-        //     if (arr[i] % 2 != 0) {
+        //     if (arr[i] % 2 !== 0) {
 
         //         console.log("Odd number is " + arr[i]);
 
@@ -85,7 +85,7 @@
 
         // for (var i = 0; i < arr.length; i++) {
 
-        //     if (arr[i] % 3 == 0) {
+        //     if (arr[i] % 3 === 0) {
 
         //         sum = sum + (arr[i] * arr[i] * arr[i]);
 
@@ -97,15 +97,9 @@
         // 7. print first name , last name stored in array of object using map() method
 
         // var arr = [
-        //     {
-        //         firstName: "Harsh", lastName: "Patel"
-        //     },
-        //     {
-        //         firstName: "Krish", lastName: "Dawra"
-        //     },
-        //     {
-        //         firstName: "Dhruv", lastName: "Dhameliya"
-        //     }
+        //     { firstName: "Harsh", lastName: "Patel"},
+        //     { firstName: "Krish", lastName: "Dawra"},
+        //     { firstName: "Dhruv", lastName: "Dhameliya"}
         // ];
         // var result = arr.map(function (obj) {
         //     return obj.firstName + " " + obj.lastName
@@ -128,11 +122,11 @@
 
         // 10. print length of each string from array of string
 
-        // var arr = ["Harsha", "Patel", "Krishi", "Dawra"];
-        // var result = arr.map(function (str) {
-        //     return str.length;
-        // });
-        // console.log(result);
+        var arr = ["Harsha", "Patel", "Krishi", "Dawra"];
+        var result = arr.map(function (str) {
+            return str.length;
+        });
+        console.log(result);
 
 
         // 11. print string whose 1st & last character is 'a' from array of string
