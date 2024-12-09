@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Example</title>
+
+    <style>
+        body {
+            background-color: lightblue;
+        }
+        form{
+            font-size: 20px;
+            text-align: center;
+            margin-top: 30px;
+        }
+        .sub{
+            padding: 12px;
+            background-color: lightseagreen;
+            border-radius: 20px;
+
+        }
+
+    </style>
+</head>
+
+<body>
+    <form action="" onsubmit="return validateForm()">
+        <label for="firstName"></label>
+        <input type="text" name="firstName" id="firstName" placeholder="First Name">
+        
+        <label for="lastName"></label>
+        <input type="text" name="lastName" id="lastName" placeholder="Last Name">
+        <br><br>
+
+        <label for="hobby">Hobby:</label>
+        <input type="text" name="hobby" id="hobby" placeholder="Hobby">
+        <br><br>
+
+        <label for="birth date">Birth Date:</label>
+        <input type="date" name="birthDate" id="birthDate" placeholder="Date">
+        <br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" placeholder="Password">
+        <br><br>
+
+        <label for="email">E-mail:</label>
+        <input type="email" name="email" id="email" placeholder="E-mail">
+        <br><br>
+
+        <label>Gender:</label>
+        <!-- <label for="male">Male</label> -->
+        <input type="radio" value="male" id="gender" name="gender">Male
+
+        <!-- <label for="female">Female</label> -->
+        <input type="radio" value="female" id="gender" name="gender">Female
+
+        <br><br>
+
+        <input class="sub" type="submit">
+    </form>
+
+    <script>
+        function validateForm() {
+            var firstName = document.getElementById("firstName").value
+            var lastName = document.getElementById("lastName").value
+            var password = document.getElementById("password").value
+            var email = document.getElementById("email").value
+            var gender = document.querySelector('input[name="gender"]:checked')
+
+        if(firstName=='')
+        {
+            alert("First name be filled")
+            return false
+        }
+        else if(lastName=='')
+        {
+            alert("last name be filled")
+            return false
+        }
+        else if(hobby=='')
+        {
+            alert("Hobby be filled")
+            return false
+        }
+        // else if(birthdate=='')
+        // {
+        //     alert("Enter the Birthdate")
+        //     return false
+        // }
+        else if(password=='')
+        {
+            alert("password be filled")
+            return false
+        }
+        else if(email=='')
+        {
+            alert("email be filled")
+            return false
+        }
+        else if(!gender)
+        {
+            alert("gender be filled")
+            return false
+        }
+        alert("form submit")
+        return true
+        }
+    </script>
+</body>
+
+</html>
