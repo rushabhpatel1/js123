@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
         // class person{
@@ -25,17 +27,113 @@
         //////////
 
 
-        var obj={
-            name:"rushabh",
-            age:20,
-            phoneno:"9999999999",
-            greet:function(){
-                console.log(`Hello, my name is ${this.name} and I am ${this.age} or My MO Number is ${this.phoneno}`)
+        // var obj={
+        //     name:"rushabh",
+        //     age:20,
+        //     phoneno:"9999999999",
+        //     greet:function(){
+        //         console.log(`Hello, my name is ${this.name} and I am ${this.age} or My MO Number is ${this.phoneno}`)
+        //     }
+        // }
+        // console.log(obj);
+        // obj.greet()
+
+
+
+
+
+        //// inheritence ////
+
+        // var parentobj={
+        //     greet(){
+        //         console.log("My name is Rushabh");
+        //     }
+        // }
+
+        // var childobj=Object.assign(parentobj)
+        // childobj.greet()
+
+
+        ////////////
+
+
+        // class parent {
+        //     greet() {
+        //         console.log("parent obj");
+        //     }
+        // }
+        // class Child extends parent {
+        //     greet() {
+        //         super.greet()
+        //         console.log("child obj");
+        //     }
+        // }
+        // var child = new Child()
+        // child.greet()
+
+
+
+        //////////////
+
+
+        // class grendparents{
+        //     greet(){
+        //         console.log("grendparents obj");
+        //     }
+        // }
+        // class parents extends grendparents{}
+        // class Child extends parents {}
+
+        // var child=new Child()
+        // child.greet()
+
+
+
+        //////////////
+
+
+
+        // contructor //
+
+        // class example{
+        //     constructor(){
+        //         this.name="sun"
+        //     }
+        // }
+        // var obj=new example()
+        // console.log(obj.name)
+
+
+
+        // peramitter contructor //
+
+        // class example{
+        //     constructor(name){
+        //         this.name=name
+        //     }
+        // }
+        // var obj=new example("rushabh")
+        // console.log(obj.name)
+
+
+         
+        // copy contructor //
+
+        class Example{
+            constructor(obj){
+                this.name=obj.name
             }
         }
-        console.log(obj);
-        obj.greet()
+        var obj=new Example({name:"ram"})
+        var obj1=new Example(obj)
+        console.log(obj1.name)
+
+
+
+
+
 
     </script>
 </body>
+
 </html>
