@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+     body {
+            font-family: Arial, sans-serif;
+            /* display: flex; */
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            color: white;
+           background-color: rgb(59, 139, 165);
+
+        }
+
+        #quote {
+            font-size: 30px;
+            text-align: center;
+            margin-bottom: 20px;
+            border: 9px double black;
+            padding: 20px;
+            border-radius: 10px;
+            transition: 1s linear;
+        }
+
+
+        #quote:hover{
+            color: black;
+            border: 9px double lightcoral;
+        }
+
+        div{
+            margin-left: 45%;
+            
+        }
+
+</style>
+<body>
+
+    <p id="quote"></p>
+    <div>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc2cE4uG1NIvqWch-U47PY7agS6v0FfroI8ZA2sQtitLGAPB656z89qIV7fsHMTdmvxsI&usqp=CAU" alt="">
+    </div>
+
+    <script>
+        var quotes = [
+            "    Lorem ipsum dolor sit amet consectetur adipisicing elit. CARS! 1",
+            "    Lorem ipsum dolor sit amet consectetur adipisicing elit. CARS! 2",
+            "    Lorem ipsum dolor sit amet consectetur adipisicing elit. CARS! 3",
+            "    Lorem ipsum dolor sit amet consectetur adipisicing elit. CARS! 4."
+        ]
+
+        function getQuotes() {
+            var random = Math.floor(Math.random() * quotes.length)
+            return quotes[random]
+        }
+
+        function display() {
+            var dis = document.getElementById("quote")
+            dis.innerHTML = getQuotes()
+        }
+        window.onload=display;
+
+        setInterval(display,1000)
+
+
+    </script>
+</body>
+
+</html>
