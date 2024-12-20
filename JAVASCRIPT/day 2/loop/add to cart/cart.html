@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f9fa;
+        color: #333;
+    }
+
+    .products {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .product-card {
+        border: 1px solid #ddd;
+        padding: 16px;
+        width: 200px;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        background-color: #fff;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .product-card img {
+        width: 100%;
+        height: auto;
+        border-radius: 4px;
+        margin-bottom: 12px;
+    }
+
+    .product-card h1 {
+        font-size: 1.2rem;
+        margin: 8px 0;
+        color: #007bff;
+    }
+
+    .product-card p {
+        margin: 4px 0;
+        font-size: 0.9rem;
+    }
+
+    .product-card button {
+        padding: 8px 12px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.2s;
+        margin: 4px;
+        font-size: 0.9rem;
+    }
+
+    .product-card button:hover {
+        background-color: #0056b3;
+        transform: translateY(-2px);
+    }
+
+    .product-card button:active {
+        transform: translateY(0);
+    }
+</style>
+
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+    var product = JSON.parse(localStorage.getItem("cart")) || [];
+    console.log(product);
+
+    product.forEach((el,i)=>{
+        var div = document.createElement("div")
+     
+       
+        var img = document.createElement("img")
+        img.src = el.img
+        img.alt = el.name;
+        var name = document.createElement("h1")
+        name.innerHTML = el.name
+        var price = document.createElement("p")
+        price.innerHTML =` price is = ${el.price}`
+        let totalPrice = document.createElement("p")
+        totalPrice.innerHTML=`totalPrice is = ${el.price}`
+
+        function finalPrice(el){
+            var total=el.price*el.qty
+            totalPrice.innerHTML=`totalPrice is=${total}`
+        }
+       
+
+        var qty = document.createElement("p")
+        qty.innerHTML = `qty is = ${el.qty}`
+        
+        function incqty(el){
+            el.qty++;
+            qty.innerHTML=`qty is = ${el.qty}`
+            finalPrice(el)
+        }
+
+        
+        var button1=document.createElement("button")
+        button1.innerHTML="increase"
+        button1.addEventListener("click",function(){
+            incqty(el)
+            
+        })
+        function decqty(el){
+            el.qty--;
+            qty.innerHTML=`qty is = ${el.qty}`
+            finalPrice(el)
+        }
+        
+        var button2=document.createElement("button")
+        button2.innerHTML="decrease"
+        button2.addEventListener("click",function(){
+            decqty(el,i)
+        })
+    
+        let payment=document.createElement("button")
+        payment.innerHTML="MAKE PAYMENT";
+        
+        div.append(img, name, price,totalPrice, qty, button1,button2,payment)
+      
+        document.querySelector("body").append(div)
+    })
+</script>

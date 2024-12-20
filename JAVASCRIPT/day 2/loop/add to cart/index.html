@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            justify-content: center;
+        }
+
+        .product-card {
+            border: 1px solid #ddd;
+            padding: 16px;
+            width: 200px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            background-color: #fff;
+
+        }
+
+        .product-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        .product-card h1 {
+            font-size: 1.2rem;
+            margin: 8px 0;
+        }
+
+        .product-card p {
+            margin: 4px 0;
+        }
+
+        .product-card button {
+            padding: 8px 12px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .product-card button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    let arr = [
+        {
+            img: "https://5.imimg.com/data5/SELLER/Default/2023/6/320415067/VD/ZZ/UT/40013987/2-500x500.jpg",
+            price: 50,
+            name: "MENS TSHIRT",
+            qty: 1,
+            id: 1
+        },
+        {
+            img: "https://thalasiknitfab.com/cdn/shop/files/onepeiceanimephototshirt._490x.progressive.jpg?v=1724571441",
+            price: 200,
+            name: "MENS SHIRT",
+            qty: 1,
+            id: 2
+        },
+        {
+            img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCuhm1mtR_Z9dnyLvGhFyq3T_HT8mLVplLeA&s",
+            price: 3700,
+            name: "MENS SHOOT",
+            qty: 1,
+            id: 3
+        },
+        {
+            img: "https://images-cdn.ubuy.co.in/636e6c4dec27de6ea71b95d3-faiwvhe-anime-t-shirt-creative-role-one.jpg",
+            price: 62,
+            name: "MENS TSHIRT",
+            qty: 1,
+            id: 4
+        },
+        {
+            img: "https://mynakama.com/cdn/shop/products/Luffy-Black-White-T-Shirt-One-Piece-t-shirts-onepiece-anime-onepiecestore-manga-mynakama.jpg?v=1657469250",
+            price: 68,
+            name: "MENS SHIRT",
+            qty: 1,
+            id: 5
+        },
+        {
+            img: "https://m.media-amazon.com/images/I/71xdGhLXA0S._AC_SX342_.jpg",
+            price: 69,
+            name: "MENS SHIRT ",
+            qty: 1,
+            id: 6
+        },
+        {
+            img: "https://img4.dhresource.com/webp/m/0x0/f3/albu/jc/j/05/0d5a73cc-41a0-4454-a8b7-397433ebd4ce.jpg",
+            price:20,
+            name: "MENS SHIRT",
+            qty: 1,
+            id: 7
+        },
+        {
+            img: "https://londonprints.in/cdn/shop/products/806-2.jpg?v=1661276264&width=1445",
+            price: 25,
+            name: "MENS SHIRT",
+            qty: 1,
+            id: 8
+        },
+        {
+            img: "https://img.joomcdn.net/43b61d3ab8e702c46a1901c49b894114f3099b1a_original.jpeg",
+            price: 30,
+            name: "MENS SHIRT",
+            qty: 1,
+            id: 9
+        },
+        {
+            img: "https://img4.dhresource.com/webp/m/0x0/f3/albu/jc/o/09/3fb8206e-0b23-45d7-a36a-c854997df3c7.png",
+            price: 1000,
+            name: "MENS SHIRT",
+            qty: 1,
+            id: 10
+        },
+        {
+            img: "https://images.meesho.com/images/products/438546256/fvnpz_512.webp",
+            price: 3000,
+            name: "MENS SHIRT",
+            qty: 1,
+            id: 11
+        },
+        {
+            img: "https://www.dhresource.com/webp/m/0x0/f2/albu/g22/M00/22/F5/rBVaEmLd6b6AJn9wAADFLXap6NM206.jpg",
+            price: 4000,
+            name: "MENS SHIRT",
+            qty: 1,
+            id: 12
+        },
+    ]
+    var container = document.createElement("div");
+    container.classList.add("products");
+
+    arr.forEach((el, i) => {
+        var div = document.createElement("div")
+        div.classList.add("product-card");
+       
+        var img = document.createElement("img")
+        img.src = el.img
+        img.alt = el.name;
+        var name = document.createElement("h1")
+        name.innerHTML = el.name
+        var price = document.createElement("p")
+        price.innerHTML = `price is = ${el.price}`
+
+        var qty = document.createElement("p")
+        qty.innerHTML =` qty is = ${el.qty}`
+        var butoon = document.createElement("button")
+        butoon.innerHTML = "add to cart"
+        
+
+        div.append(img, name, price, qty, butoon)
+        container.append(div)
+
+        butoon.addEventListener("click",function(){
+            addToCart(el)
+        })
+        
+    });
+    document.querySelector("body").append(container)
+
+    function addToCart(el) {
+    var product = JSON.parse(localStorage.getItem("cart")) || [];
+
+    product.push(el);
+
+    localStorage.setItem("cart", JSON.stringify(product));
+
+    location.href = "cart.html";
+}
+
+    
+
+    
+</script>
