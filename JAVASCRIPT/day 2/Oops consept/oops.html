@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        // class Person {
+        //     constructor(name, age) {
+        //         this.name = name;
+        //         this.age = age;
+        //     }
+        //     greet() {
+        //         return `My name is ${this.name} and My age is ${this.age}`;
+        //     }
+        // }
+
+        // const p1 = new Person("Rushabh", 19);
+        // console.log(p1.greet());
+
+
+
+
+
+
+        var obj = {
+            name: "Rushabh",
+            age: 23,
+            phoneno: "11224433",
+            greet() {
+                console.log(`The name is ${this.name}`);
+            }
+        };
+
+        obj.greet();
+
+
+
+
+        // Inheritance
+
+
+
+        // var parentObj={
+        //     greet(){
+        //         console.log("parents obj");
+        //     }
+        // }
+        // var childobj = Object.assign(parentObj)
+        // childobj.greet()
+
+
+        // class Parents{
+        //     greet(){
+        //         console.log("parents obj");
+        //     }
+        // }
+        // class Child extends Parents{
+        //     greet(){
+        //         super.greet()
+        //         console.log("child obj");
+        //     }
+        // }
+        // var child = new Child()
+        // child.greet()
+
+
+        // class GrandParents{
+        //     greet(){
+        //         console.log("grandparents");
+        //     }
+        // }
+        // class Parents extends GrandParents{}
+        // class Child extends Parents{}
+
+        // var child = new Child()
+        // child.greet()
+
+
+
+
+        // Constructor
+
+
+
+
+        // Default Constructor
+
+
+        // class Example{
+        //     constructor(){
+        //         this.name="shyam"
+        //     }
+        // }
+        // const obj = new Example()
+        // console.log(obj.name);
+
+
+        // parameter constructor
+
+
+        // class Example{
+        //     constructor(name){
+        //         this.name = name
+        //     }
+        // }
+        // const obj = new Example("ram")
+        // console.log(obj.name);
+
+
+        // Copy constructor
+
+
+        // class Example{
+        //     constructor(obj){
+        //         this.name = obj.name
+        //     }
+        // }
+        // const obj = new Example({name:"santosh"})
+        // const obj1 = new Example(obj)
+        // console.log(obj1.name);
+
+
+
+
+
+
+        /* Polymorphism*/
+
+
+
+
+        //    Function Overriding
+
+
+        // class Animal{
+        //     speak(){
+        //         console.log("animal class");
+        //     }
+        // }
+
+        // class Dog extends Animal{
+        //     speak(){
+        //         console.log("dog class");
+        //     }
+        // }
+        // var animal= new Animal()
+        // animal.speak()
+        // var dog = new Dog()
+        // dog.speak()
+
+
+
+
+        // Function Overloding
+
+        // function greet(name,age){
+        //     if(age !== undefined){
+        //         console.log( my name is ${name} and age is ${age});
+        //     }else{
+        //         console.log( my name is ${name});
+        //     }
+        // }
+        // greet("santosh",20)
+        // greet("santosh")
+
+    </script>
+
+</body>
+
+</html>

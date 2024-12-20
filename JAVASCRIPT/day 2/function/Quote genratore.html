@@ -1,49 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body{
-            display: flex;
+        body {
+            /* display: flex; */
             justify-content: center;
             font-family: 'Times New Roman', Times, serif;
             background-color: lightblue;
-            align-items: center;
+            /* align-items: center; */
             height: 100%;
             margin: 0;
         }
 
-        
+        .dd{
+            display: flex;
+            justify-content: center;
+        }
+        button {
+            display: flex;
+            padding: 20px;
+            margin-top: 50px;
+        }
     </style>
 </head>
+
 <body>
-   
+    <div class="dd">
         <p id="quote"></p>
         <button id="button">Click</button>
-   
+    </div>
 
     <script>
-        var Quote = [
-            "I have not failed. I've just found 10,000 ways that won't work",
-            "Success is not final, failure is not fatal: It is the courage to continue that counts",
-            "Believe you can and you're halfway there",
-            "It does not matter how slowly you go as long as you do not stop",
-            "Don't watch the clock; do what it does. Keep going."
+        var quote = [
+            "I have some frieds",
+            "haaaareeee ssssss",
+            "jeeellll donuuuu",
+            "kaashhhh mamuuu",
+            "nakamu donnn"
         ];
 
-        function nakamu(){
-            var random = Math.floor(Math.random() * Quote.length);
-            return Quote[random];
+        function random() {
+            var random = Math.floor(Math.random() * quote.length);
+            return quote[random];
         }
 
-        function show(){
-            var display = document.getElementById("Quote");
-            display.innerHTML = nakamu();
+        function show() {
+            var display = document.getElementById("quote");
+            display.innerHTML = random();
         }
-        
-        document.getElementById("button").addEventListener("click",show);
+
+        document.getElementById("button").addEventListener("click", show);
     </script>
 </body>
+
 </html>

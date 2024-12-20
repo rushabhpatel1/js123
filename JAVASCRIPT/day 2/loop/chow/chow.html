@@ -7,7 +7,7 @@
     <title>Form Example</title>
 
     <style>
-        body {
+        /* body {
             background-color: lightblue;
         }
 
@@ -21,12 +21,14 @@
             padding: 12px;
             background-color: lightseagreen;
             border-radius: 20px;
-        }
+        } */
+
+        
     </style>
 </head>
 
 <body>
-    <form onsubmit="return validateForm()">
+    <!-- <form onsubmit="return validateForm()">
         <label for="firstName">First Name:</label>
         <input type="text" name="firstName" id="firstName" placeholder="First Name">
         <br><br>
@@ -59,45 +61,45 @@
         <label for="female">Female</label>
         <br><br>
 
-        <input class="sub" type="submit" value="Submit">
+        <input class="sub" type="submit" value="Submit"> -->
     </form>
 
     <script>
-        function validateForm() {
-            var firstName = document.getElementById("firstName").value;
-            var lastName = document.getElementById("lastName").value;
-            var hobby = document.getElementById("hobby").value;
-            var birthDate = document.getElementById("birthDate").value;
-            var password = document.getElementById("password").value;
-            var email = document.getElementById("email").value;
-            var gender = document.querySelector('input[name="gender"]:checked');
+        // function validateForm() {
+        //     var firstName = document.getElementById("firstName").value;
+        //     var lastName = document.getElementById("lastName").value;
+        //     var hobby = document.getElementById("hobby").value;
+        //     var birthDate = document.getElementById("birthDate").value;
+        //     var password = document.getElementById("password").value;
+        //     var email = document.getElementById("email").value;
+        //     var gender = document.querySelector('input[name="gender"]:checked');
 
-            if (firstName == '') {
-                alert("First name must be filled");
-                return false;
-            } else if (lastName == '') {
-                alert("Last name must be filled");
-                return false;
-            } else if (hobby == '') {
-                alert("Hobby must be filled");
-                return false;
-            } else if (birthDate == '') {
-                alert("Birth date must be filled");
-                return false;
-            } else if (password == '') {
-                alert("Password must be filled");
-                return false;
-            } else if (email == '') {
-                alert("Email must be filled");
-                return false;
-            } else if (!gender) {
-                alert("Gender must be selected");
-                return false;
-            }
+        //     if (firstName == '') {
+        //         alert("First name must be filled");
+        //         return false;
+        //     } else if (lastName == '') {
+        //         alert("Last name must be filled");
+        //         return false;
+        //     } else if (hobby == '') {
+        //         alert("Hobby must be filled");
+        //         return false;
+        //     } else if (birthDate == '') {
+        //         alert("Birth date must be filled");
+        //         return false;
+        //     } else if (password == '') {
+        //         alert("Password must be filled");
+        //         return false;
+        //     } else if (email == '') {
+        //         alert("Email must be filled");
+        //         return false;
+        //     } else if (!gender) {
+        //         alert("Gender must be selected");
+        //         return false;
+        //     }
 
-            alert("Form submitted successfully!");
-            return true;
-        }
+        //     alert("Form submitted successfully!");
+        //     return true;
+        // }
     </script>
 </body>
 

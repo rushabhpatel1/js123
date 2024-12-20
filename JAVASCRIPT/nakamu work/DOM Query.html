@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            font-size: 20px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- querySelector DOM -->
+
+    <button>Click</button>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <script>
+        
+        // document.querySelector("button").addEventListener("click", ()=>{
+        //     alert("hello")
+        // })
+
+        // document.querySelector("p").style.backgroundColor="green"
+
+        var a=document.querySelectorAll("p")
+
+        for(i=0; i<a.length; i++){
+            a[i].style.backgroundColor="green"
+        }
+    </script>
+</body>
+</html>

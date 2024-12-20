@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Gallery</title>
+    <style>
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            background-color: lightblue;
+            font-family: Arial, sans-serif;
+        }
+
+        div {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            overflow: hidden;
+            text-align: center;
+            width: 18%;
+        }
+
+        img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        p {
+            margin: 10px 0;
+            color: #333;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+            margin: 10px 0;
+            padding: 10px 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+</body>
+
+</html>
+
+<script>
+    let arr = [
+        {
+            image: "https://5.imimg.com/data5/SELLER/Default/2023/6/320415067/VD/ZZ/UT/40013987/2-500x500.jpg",
+            price: "100$"
+        },
+        {
+            image: "https://thalasiknitfab.com/cdn/shop/files/onepeiceanimephototshirt._490x.progressive.jpg?v=1724571441",
+            price: "100$"
+        },
+        {
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCuhm1mtR_Z9dnyLvGhFyq3T_HT8mLVplLeA&s",
+            price: "100$"
+        },
+        {
+            image: "https://images-cdn.ubuy.co.in/636e6c4dec27de6ea71b95d3-faiwvhe-anime-t-shirt-creative-role-one.jpg",
+            price: "100$"
+        },
+        {
+            image: "https://mynakama.com/cdn/shop/products/Luffy-Black-White-T-Shirt-One-Piece-t-shirts-onepiece-anime-onepiecestore-manga-mynakama.jpg?v=1657469250",
+            price: "100$"
+        },
+        {
+            image: "https://m.media-amazon.com/images/I/71xdGhLXA0S._AC_SX342_.jpg",
+            price: "100$"
+        },
+        {
+            image: "https://img4.dhresource.com/webp/m/0x0/f3/albu/jc/j/05/0d5a73cc-41a0-4454-a8b7-397433ebd4ce.jpg",
+            price: "100$"
+        },
+        {
+            image: "https://down-my.img.susercontent.com/file/6d76086594ed9cfd03740fd9cffd8245",
+            price: "100$"
+        },
+        {
+            image: "https://img.joomcdn.net/43b61d3ab8e702c46a1901c49b894114f3099b1a_original.jpeg",
+            price: "100$"
+        },
+        {
+            image: "https://img4.dhresource.com/webp/m/0x0/f3/albu/jc/o/09/3fb8206e-0b23-45d7-a36a-c854997df3c7.png",
+            price: "100$"
+        }
+    ];
+
+    arr.forEach((el, i) => {
+        var div = document.createElement("div");
+        var img = document.createElement("img");
+        img.src = el.image;
+
+        var price = document.createElement("p");
+        price.innerHTML = `Price: ${el.price}`;
+
+        var qty = document.createElement("p");
+        qty.innerHTML = `Qty: ${el.qty || 1}`;
+
+        var button = document.createElement("button");
+        button.innerHTML = "Add to Cart";
+
+        div.append(img, price, qty, button);
+        document.querySelector("body").append(div);
+
+        button.addEventListener("click", function () {
+            localStorage.setItem("cart", JSON.stringify(arr[i]));
+            alert("Item added to cart!");
+        });
+
+        
+
+        // var product=JSON(localStorage.getItem("product")) ||[];
+        // product.forEach((el,i)=>{
+        //     var div=document.createElement("div");
+        //     var img=document.createElement("img");
+        //     img.src=el.image;
+        //     var name=document.createElement("h1")
+        //     name.innerHTML=el.qty
+        //     var price=document.createElement("p");
+        //     price.innerHTML=`Price: ${el.price}`;
+        //     var qty=document.createElement("p");
+            
+        // })
+        
+
+
+    });
+</script>
