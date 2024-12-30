@@ -1,18 +1,173 @@
-*{
+* {
     box-sizing: border-box;
 }
-body{
+
+:root{
+    /* --hoverTextcolor:rgb(130, 33, 49); */
+}
+
+body {
     margin: 0;
     padding: 0;
     width: 100%;
+    color: #848484;
 }
-.header{
+
+.header {
     height: 72px;
     outline: 1px solid #ccc;
     padding: 0px 10px;
     display: flex;
     align-items: center;
+    /* justify-content: space-between; */
+    justify-content: space-around;
 }
-.logocontainer{
+
+.headerLeft,.headerRight{
+    display: flex;
+    align-items: center;
+}
+
+.logocontainer {
     width: 150px;
+}
+
+
+
+.searchbox {
+    display: flex;
+    outline: 1px solid grey;
+    border-radius: 3px;
+    padding: 5px;
+    width: 350px;
+    height: 50px;
+    margin-left: 25px;
+    align-items: center;
+    position: relative;
+}
+
+/* .searchcontainer {
+    
+  align-items: center;
+ } */
+
+.searchIcon {
+    width: 20px;
+    margin: 5px;
+    color: grey;
+}
+
+.inputclosesearch {
+    margin: 15px;
+}
+
+form {
+    width: 100%;
+}
+
+.inputsearch {
+    width: 268px;
+    height: 45px;
+    border: none;
+    font-size: 17px;
+}
+
+#closesearch {
+    display: none;
+    color: grey;
+}
+
+
+.searchbox:focus-within .searchRecentModal {
+    display: block;
+}
+
+
+
+
+/* right */
+.headerRight{
+    margin-left: 750px;
+    align-items: center;
+}
+.mobileIcon{
+    width: 30px;
+    padding: 0px 20px;
+    height: 40px;
+    color: grey;
+}
+.downloadContainer{
+    display: flex;
+    align-items: center;   
+    padding-right: 20px;
+    position: relative;
+
+}
+.downloadContainer:hover{
+    color: rgb(231, 76, 102);
+    cursor: pointer;
+}
+.downloadBtn{
+    display: block;
+    width: 10px;
+    height: 10px;
+}
+.downloadHoverBtnContainer{
+    position: absolute;
+    bottom: 0;
+    width: 200px;
+    height: 200px;
+    padding: 10px;
+    background-color: white;
+    color: #848484;
+    text-align: center;
+    top: 60px;
+    display: none;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+
+}
+.downloadContainer:hover .downloadHoverBtnContainer,
+.downloadContainer:focus .downloadHoverBtnContainer{
+    display: block;
+}
+
+
+.downloadContainer p{
+    color: #5b5a5a;
+    padding-right: 20px;
+}
+
+
+.profileAndCart{
+    display: flex;
+    align-items: center;
+}
+.profileAndCart:hover,.profileAndCart:focus{
+    color: rgb(231, 76, 102);
+}
+.profileIcon,.cartIcon{
+    width: 20px;
+}
+.profileAndCart p{
+    margin: 0;
+    padding: 0;
+}
+.profileContainer,.cartContainer{
+    padding: 0px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-decoration: none;
+    color: #5b5a5a;
+}
+
+
+.becomeSupplierContainer{
+    padding: 0px 30px;
+    border-left: 1.5px solid gray;
+    border-right: 1.5px solid gray;
+    font-size: 17px;
+    text-decoration: none;
+    color: #5b5a5a;
 }
