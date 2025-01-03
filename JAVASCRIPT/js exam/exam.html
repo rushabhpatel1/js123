@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 20px;
+            text-align: center;
+            font-size: 20px;
+            background-color: lightgrey;
+        }
+
+        .task-form {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .task {
+            border: 1px solid lightgray;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .priority-low {
+            background-color: #d4edda;
+        }
+
+        .priority-medium {
+            background-color: #ffeeba;
+        }
+
+        .priority-high {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Task Management System</h1>
+
+    <div class="task-form">
+
+        <h3>Add New Task</h3>
+
+        <form action="" id="taskForm">
+            <input type="text" id="taskTitle" placeholder="Task Title" required><br><br>
+            <input type="text" id="taskDescription" placeholder="Task Description"><br><br>
+            <input type="date" id="taskDueDate" required><br><br>
+
+            <select name="" id="taskPriority" required>
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select><br><br>
+
+            <button type="submit">Add task</button>
+
+        </form>
+
+    </div>
+
+    <div>
+        <h3>Filter Task by Priority</h3>
+        <select name="" id="priorityFilter">
+            <option value="all">All</option>
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+        </select><br>
+    </div>
+
+    <div id="taskList"></div>
+
+    <script>
+        const taskForm = document.getElementById('taskForm');
+        const taskList = document.getElementById('taskList');
+        const priorityFilter = document.getElementById('priorityFilter');
+
+        let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+
+        function saveTasksToLocalStorage() {
+            localStorage.setItem('tasks', JSON.stringify(tasks));
+        }
+
+        function addTask(event) {
+            event.preventDefault();
+
+            const title = document.getElementById('taskTitle').value;
+
+            const description = document.getElementById('taskDescription').value;
+
+            const dueDate = document.getElementById('taskDueDate').value;
+
+            const priority = document.getElementById('taskPriority').value;
+
+            if (!title || !dueDate) {
+                alert('Task title and due date are required');
+                return;
+            }
+
+            const newTask = {
+                id: Date.now(),
+                title,
+                description,
+                dueDate,
+                priority
+            };
+
+            tasks.push(newTask);
+            saveTasksToLocalStorage();
+            displayTasks();
+
+            taskForm.reset();
+        }
+
+        function displayTasks(filter = 'all') {
+            taskList.innerHTML = '';
+
+            const filteredTasks = filter === 'all' ? tasks : tasks.filter(task => task.priority === filter);
+
+            filteredTasks.forEach(task => {
+                const taskDiv = document.createElement('div');
+                taskDiv.className = `task priority-${task.priority}`;
+
+                taskDiv.innerHTML = `
+                    <h4>${task.title}</h4>
+                    <p>${task.description}</p>
+                    <p>Due Date: ${task.dueDate}</p>
+                    <p>Priority: ${task.priority}</p>
+                    <button onclick="editTask(${task.id})">Edit</button>
+                    <button onclick="deleteTask(${task.id})">Delete</button>
+                    `;
+                taskList.appendChild(taskDiv);
+            });
+        }
+
+        function editTask(id) {
+            const task = tasks.find(task => task.id === id);
+
+            if (task) {
+                document.getElementById('taskTitle').value = task.title;
+                document.getElementById('taskDescription').value = task.description;
+                document.getElementById('taskDueDate').value = task.dueDate;
+                document.getElementById('taskPriority').value = task.priority;
+
+                deleteTask(id);
+
+            }
+        }
+
+        function deleteTask(id) {
+            tasks = tasks.filter(task => task.id !== id);
+            saveTasksToLocalStorage();
+            displayTasks();
+        }
+
+        priorityFilter.addEventListener('change', () => {
+            displayTasks(priorityFilter.value);
+        });
+
+        taskForm.addEventListener('submit', addTask);
+
+        displayTasks();
+
+
+    </script>
+</body>
+
+</html>
